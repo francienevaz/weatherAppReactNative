@@ -5,17 +5,20 @@ function zipUrl(zip) {
     return `${API_STEM}q=${zip}&units=metric&APPID=${WEATHER_API_KEY}`;
 }
 
-function fetchForecast (zip) {
-    return fetch(zipUrl(zip))
-        .then((response) => response.json())
-        .then(responseJSON => {
-            return {
+async function fetchForecast (zip) {
+    try {
+        const response = await fetch(zipUrl(zip));
+        const responseJSON = await response.json();
+    
+    return {
+            
                 main: responseJSON.weather[0].main,
                 description: responseJSON.weather[0].description,
                 temp: responseJSON.main.temp
-            };
-        })
-        .catch(()=> console.log("Error"));
-}
+            
+        }} catch (error) {
+            console.log("Error", error);
+        throw error;
+}}
 
 export default { fetchForecast: fetchForecast };
