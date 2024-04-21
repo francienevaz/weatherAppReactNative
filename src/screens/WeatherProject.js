@@ -34,7 +34,7 @@ class WeatherProject extends Component {
         return (
             <View style={styles.container}>
               <ImageBackground
-                source={require("../assets/flowers.jpg")}
+                source={require("../assets/flowers.png")}
                 resizeMode="cover"
                 style={styles.backdrop}
               >
@@ -59,7 +59,7 @@ class WeatherProject extends Component {
       }
     }
     
-    const baseFontSize = 16;
+    const baseFontSize = 18;
     
     const styles = StyleSheet.create({
       container: { 
