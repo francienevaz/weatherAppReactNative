@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, TextInput, ImageBackground } from "react-native";
-import Forecast from "./Forecast";
-import open_weather_map from "./src/weather/open_weather_map";
+import Forecast from "../components/Forecast";
+import open_weather_map from "../weather/open_weather_map";
 
 class WeatherProject extends Component {
     constructor(props) {
@@ -34,7 +34,7 @@ class WeatherProject extends Component {
         return (
             <View style={styles.container}>
               <ImageBackground
-                source={require("./assets/flowers.jpg")}
+                source={require("../assets/flowers.jpg")}
                 resizeMode="cover"
                 style={styles.backdrop}
               >
